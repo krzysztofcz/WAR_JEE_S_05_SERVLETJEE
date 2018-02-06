@@ -35,7 +35,16 @@ public class Get4 extends HttpServlet {
 				writer.append("<p> Dostałem parametr ! </p>");
 			}
 			writer.append("<p>");
-			for (int i=1;i<=page;i++) {
+			Integer start = null;
+			Integer end = null;
+			if(page>0) {
+				start=1; end = page;
+			}
+			else if (page<0) {
+				start=page;
+				end=-1;
+			}
+			for (int i=start;i<=end;i++) {
 				if(page%i==0) {
 					writer.append(String.valueOf(i)).append(" ");
 				}
