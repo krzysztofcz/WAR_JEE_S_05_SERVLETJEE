@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Post1
+ * Servlet implementation class Post2
  */
-@WebServlet("/Post1")
-public class Post1 extends HttpServlet {
+@WebServlet("/Post2")
+public class Post2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Post1() {
+    public Post2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,6 @@ public class Post1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 	}
 
 	/**
@@ -37,10 +36,16 @@ public class Post1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Writer writer=response.getWriter();
-		writer.append("<p></p>");
-		writer.append("Witaj, ");
-		writer.append(request.getParameter("name")).append(" ").append(request.getParameter("surname")).append(".");
+		Writer writer = response.getWriter();
+		String text = request.getParameter("text");
+		if(request.getParameterValues("checkbox")!=null) {
+		} else {
+			String[] badWords= {"kurwa","chuj","pizda"};
+			for (String badWord : badWords) {
+				text=text.replaceAll(badWord, "***");
+			}
+		}
+		writer.append(text);
 		
 	}
 
