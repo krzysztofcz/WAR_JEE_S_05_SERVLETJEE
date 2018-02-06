@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>servletjee</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Servlet13</servlet-name>
+    <servlet-class>pl.coderslab.Servlet13</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet13</servlet-name>
+    <url-pattern>/Servlet13</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlet22</servlet-name>
+    <servlet-class>pl.coderslab.Servlet22</servlet-class>
+    <init-param>
+      <param-name>myParam</param-name>
+      <param-value>coderslab.pl</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet22</servlet-name>
+    <url-pattern>/Servlet22</url-pattern>
+  </servlet-mapping>
+  <context-param> 
+      <param-name>applicationName</param-name>
+      <param-value>MyApplicationName</param-value>
+  </context-param>
+</web-app>
