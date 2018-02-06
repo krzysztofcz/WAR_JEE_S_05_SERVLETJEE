@@ -1,6 +1,8 @@
 package pl.coderslab;
 
 import java.io.IOException;
+import java.io.Writer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +28,28 @@ public class Get4 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		W projekcie stwórz servlet Get4, dostępny pod adresem /Get4, oraz stronę HTML index.html, w której zawarty jest formularz przesyłany metodą GET z jednym polem page.
-		Po uruchomieniu aplikacji na serwerze, uzupełnieniu i zatwierdzeniu formularza w przeglądarce wyświetli się informacja czy wartość została przesłana oraz wyświetlone zostaną dzielniki całkowite przesłanej liczby.
+		Writer writer = response.getWriter();
+		try {
+			Integer page = Integer.parseInt(request.getParameter("page"));
+			if(!page.equals(null)) {
+				writer.append("<p> Dostałem parametr ! </p>");
+			}
+			writer.append("<p>");
+			for (int i=1;i<=page;i++) {
+				if(page%i==0) {
+					writer.append(String.valueOf(i)).append(" ");
+				}
+			}
+			writer.append("</p>");
+			
+		} catch (Exception e) {
+			
+		}
+		
+//		W projekcie stwórz servlet Get4, dostępny pod adresem /Get4, oraz stronę HTML index.html, w której 
+//		zawarty jest formularz przesyłany metodą GET z jednym polem page.
+//		Po uruchomieniu aplikacji na serwerze, uzupełnieniu i zatwierdzeniu formularza w przeglądarce wyświetli się 
+//		informacja czy wartość została przesłana oraz wyświetlone zostaną dzielniki całkowite przesłanej liczby.
 
 		
 	}
