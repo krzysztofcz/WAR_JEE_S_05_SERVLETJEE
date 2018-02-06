@@ -38,8 +38,7 @@ public class Post2 extends HttpServlet {
 		
 		Writer writer = response.getWriter();
 		String text = request.getParameter("text");
-		if(request.getParameterValues("checkbox")!=null) {
-		} else {
+		if(request.getParameterValues("checkbox")==null) {
 			String[] badWords= {"kurwa","chuj","pizda"};
 			for (String badWord : badWords) {
 				text=text.replaceAll(badWord, "***");
