@@ -59,7 +59,6 @@ public class Get4 extends HttpServlet {
 //		zawarty jest formularz przesyłany metodą GET z jednym polem page.
 //		Po uruchomieniu aplikacji na serwerze, uzupełnieniu i zatwierdzeniu formularza w przeglądarce wyświetli się 
 //		informacja czy wartość została przesłana oraz wyświetlone zostaną dzielniki całkowite przesłanej liczby.
-
 		
 	}
 
