@@ -37,9 +37,7 @@ public class Get3 extends HttpServlet {
 		try {
 			int width = Integer.parseInt(request.getParameter("width"));
 			int height = Integer.parseInt(request.getParameter("height"));
-			
-//			if ((width==0)||(height==0)) throw new Exception("Why you need multiply by 0. Its still gonna be 0");
-			
+						
 			for (int i=1;i<=height;i++) {
 				writer.append("<p>");
 				for (int j=1;j<=width;j++) {
