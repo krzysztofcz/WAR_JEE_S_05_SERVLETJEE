@@ -33,4 +33,18 @@
     <param-name>applicationName</param-name>
     <param-value>MyApplicationName</param-value>
   </context-param>
+<error-page>
+  <error-code>404</error-code>
+  <location>/pageNotFound.jsp</location>
+</error-page>
+
+<error-page>
+  <exception-type>java.lang.NullPointerException</exception-type>
+  <location>/arthmeticError.jsp</location>
+</error-page>
+<error-page>
+  <exception-type>java.lang.NumberFormatException</exception-type>
+  <location>/numberFormatException.jsp</location>
+</error-page>
+
 </web-app>
