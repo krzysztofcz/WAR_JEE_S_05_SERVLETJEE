@@ -30,8 +30,7 @@ public class Cookie1Del extends HttpServlet {
 		Cookie cookie = new Cookie("User","");
 		cookie.setMaxAge(0);
 		response.addCookie(cookie);
-		
-		response.getWriter().append(" Cookie deleted :/ "); 
+		response.getWriter().append(" Cookie deleted :/ wrrr "); 
 	}
 
 	/**
