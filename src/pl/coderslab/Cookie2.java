@@ -37,9 +37,14 @@ public class Cookie2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String key=request.getParameter("key");
 		String value=request.getParameter("value");
-		Cookie cookie = new Cookie(key, value);
-		response.addCookie(cookie);
-		response.getWriter().append("Cookie set :) ");
+		if(key.length()>0) {
+			Cookie cookie = new Cookie(key, value);
+			response.addCookie(cookie);
+			response.getWriter().append("Cookie set :) ");
+		} else {
+			response.getWriter().append("Cookie empty");
+			
+		}
 	}
 
 }
