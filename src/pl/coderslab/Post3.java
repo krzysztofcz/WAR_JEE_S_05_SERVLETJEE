@@ -37,7 +37,7 @@ public class Post3 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Writer writer = response.getWriter();
-		writer.append("<p></p>");
+		response.setContentType("text/html");
 		float a = Float.parseFloat(request.getParameter("a"));
 		float b = Float.parseFloat(request.getParameter("b"));
 		float c = Float.parseFloat(request.getParameter("c"));
@@ -47,7 +47,6 @@ public class Post3 extends HttpServlet {
 		} else if (delta==0) {
 			writer.append("One (double) real root x<sub>1</sub> = x<sub>2</sub> = "+(-b/2*a)+".");
 		} else {
-//			-b-DELAT^(1/2) / 2a
 			writer.append("Two distinct roots: x<sub>1</sub> = "+((-b-Math.pow(delta, 1/2))/(2*a)) +",");
 			writer.append(" x<sub>2</sub> = "+((-b+Math.pow(delta, 1/2))/(2*a)) +".");
 		}
