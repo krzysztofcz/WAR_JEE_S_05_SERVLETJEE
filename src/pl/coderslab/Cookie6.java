@@ -67,7 +67,6 @@ public class Cookie6 extends HttpServlet {
 		response.addCookie(ciastkoBGC);
 		writer.append("Wybrałeś kolor tekstu jako: "+textColor+", oraz tła jako: "+backgroundColor+". Twój wybór został zapisane w ciasteczku.");
 		
-		
 	}
 
 }
