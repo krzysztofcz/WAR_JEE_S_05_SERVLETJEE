@@ -30,6 +30,7 @@ public class Cookie52 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
 		Writer writer = response.getWriter();
 		
 		try {
