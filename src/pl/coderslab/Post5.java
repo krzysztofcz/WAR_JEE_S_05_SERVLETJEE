@@ -46,9 +46,6 @@ public class Post5 extends HttpServlet {
 		if (CtoF.equalsIgnoreCase("FahrToCelc")) {
 			writer.append("Temperatura w Fahrenheitach : "+degrees+" <br> a temperaturze w Celsjuszach :"+(32+( (9*degrees)/5. )) );
 		}
-		
-//		TFarehnheit  = 32 + 9/5 * T celcujasz
-//		TCelsjusz = 5/9 * (T far - 32)
 	}
 
 }
