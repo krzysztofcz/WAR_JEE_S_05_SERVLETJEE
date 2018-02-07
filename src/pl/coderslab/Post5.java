@@ -37,7 +37,7 @@ public class Post5 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Writer writer=response.getWriter();
-		writer.append("<p></p>");
+		response.setContentType("text/html");
 		String CtoF=request.getParameter("convertionType");
 		float degrees = Float.parseFloat(request.getParameter("degrees"));
 		if (CtoF.equalsIgnoreCase("celcToFahr")){
