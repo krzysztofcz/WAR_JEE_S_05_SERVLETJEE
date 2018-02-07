@@ -3,7 +3,6 @@ package pl.coderslab;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -34,8 +33,7 @@ public class Post4 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Writer writer=response.getWriter();
-		writer.append("<p></p>");
-//		int numbers=Integer.parseInt(request.getParameter("numbers"));
+		response.setContentType("text/html");
 		Random rand = new Random();
 		int many = (rand.nextInt(5)+5);
 		writer.append("<form action=\"\" method=\"post\">");
@@ -52,7 +50,7 @@ public class Post4 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Writer writer=response.getWriter();
-		writer.append("<p></p>");
+		response.setContentType("text/html");
 		String[] strNumbers=request.getParameterValues("numbers");
 		List<Integer> intNumbers= new ArrayList<Integer>();
 		
