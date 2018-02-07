@@ -2,6 +2,7 @@ package pl.coderslab;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.lang.ProcessBuilder.Redirect;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,10 +31,19 @@ public class Cookie51 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
 		Writer writer = response.getWriter();
+		try {
+			if(request.getParameter("haveCookie").equals("no")){
+				writer.append("Nie odwiedziłeś jeszcze tej strony<br>You must visit this site <a href=\"Cookie51\" >Cookie51</a> first to come here.<br>");			
+			} 
+		}catch (Exception e) {
+			
+		}
+		writer.append("Now you can visit this site <a href=\"Cookie52\" > Cookie52 </a>");
 		Cookie cookie = new Cookie("visited", "Cookie51");
 		response.addCookie(cookie);
-		writer.append("Now you can visit this site <a href=\"Cookie52\" > Cookie52 </a>");
+		
 	}
 
 	/**

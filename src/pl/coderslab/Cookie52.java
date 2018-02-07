@@ -45,7 +45,8 @@ public class Cookie52 extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			writer.append("Nie odwiedziłeś jeszcze tej strony<br>You must visit this site <a href=\"Cookie51\" >Cookie51</a> first to come here.");
+			response.setHeader("originFrom","Cookie52");
+			response.sendRedirect("Cookie51?haveCookie=no");
 		} 
 	}
 
