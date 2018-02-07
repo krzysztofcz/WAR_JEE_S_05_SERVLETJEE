@@ -29,8 +29,8 @@
     <servlet-name>Servlet22</servlet-name>
     <url-pattern>/Servlet22</url-pattern>
   </servlet-mapping>
-  <context-param> 
-      <param-name>applicationName</param-name>
-      <param-value>MyApplicationName</param-value>
+  <context-param>
+    <param-name>applicationName</param-name>
+    <param-value>MyApplicationName</param-value>
   </context-param>
 </web-app>
