@@ -29,15 +29,12 @@ public class Servlet26 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String[] userAgent = request.getHeader("User-Agent").split(" ");
-//		response.getWriter().append(Arrays.toString(userAgent)+"\n");
-//		response.getWriter().println("<br/>");	
-		response.getWriter().append("\n Użytkownik używa przeglądarki: \n");
-		response.getWriter().println("<br/>");
-		response.getWriter().println("<br/>");
+
+		response.getWriter().append("\n Użytkownik używa przeglądarki: \n").append("<br>");
 		for (int i=0;i<userAgent.length;i++) {
 			if(userAgent[i].contains("Chrome")){
 				response.getWriter().append(" - Chrome\n");
